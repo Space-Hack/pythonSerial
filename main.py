@@ -37,14 +37,7 @@ def read_from_websocket(ser: serial.Serial, websocket: ClientConnection):
 def start_socket():
     try:
         with connect(WEBSOCKET_URI) as websocket:
-            name = input("What's your name? ")
-            websocket.send(name)
-            print(f">>> {name}")
-            greeting = websocket.recv()
-            print(f"<<< {greeting}")
-
             ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
-            print(f"Connected to {ser.name}")
 
             # Start serial to websocket thread
             serial_thread = threading.Thread(
@@ -64,6 +57,7 @@ def start_socket():
         if 'ser' in locals() and ser.is_open:
             ser.close()
             print("Serial port closed.")
+
 
 if __name__ == "__main__":
     start_socket()
