@@ -66,7 +66,9 @@ def start_socket():
             print("Serial port closed.")
 
 if __name__ == "__main__":
-    ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
+    start_socket()
+
+    # ser = serial.Serial(SERIAL_PORT, BAUD_RATE, timeout=1)
     # ser.write(("FORWARD:100.0" + '\n').encode('utf-8'))
     # time.sleep(2)
     # ser.write(("BACKWARD:10.0" + '\n').encode('utf-8'))
