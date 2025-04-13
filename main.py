@@ -6,7 +6,7 @@ from websockets.sync.client import connect, ClientConnection
 # SERIAL_PORT = '/dev/ttyACM1'
 SERIAL_PORT = '/dev/tty.usbmodem2103'
 BAUD_RATE = 115200
-WEBSOCKET_URI = "ws://localhost:8765"
+WEBSOCKET_URI = "ws://aris.innovation-sg.ch:8765"
 
 
 def read_from_serial(ser: serial.Serial, websocket: ClientConnection):
